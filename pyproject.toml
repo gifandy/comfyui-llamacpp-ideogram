@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-llamacpp-ideogram"
+version = "1.0.0"
+description = "ComfyUI custom node: local llama.cpp → structured Ideogram 4 JSON prompt with thinking/reasoning support"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/iChristGit/comfyui-llamacpp-ideogram/"
+
+[tool.comfy]
+PublisherId = "iChrist"
+DisplayName = "LlamaCPP → Ideogram Prompt"
+Icon = "🦙"
