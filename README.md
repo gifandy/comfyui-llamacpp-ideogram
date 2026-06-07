@@ -6,7 +6,6 @@
 
 A ComfyUI custom node that calls your **local llama.cpp server** to expand a short idea into a rich, structured JSON prompt for **Ideogram 4** — with full thinking/reasoning support.
 
-
 ## What it does
 
 - Connects to your local llama.cpp server (`/v1/chat/completions`)
@@ -77,9 +76,20 @@ I reasoning-budget: deactivated (natural end)
 
 `natural end` means the model finished reasoning on its own before hitting the cap — ideal quality. If you see `forced end`, increase the budget.
 
-## Example workflow
+## Example Workflow
 
-`example_workflow.json` contains a full Ideogram 4 txt2img workflow with the node wired up. Drop it into ComfyUI via **Load** to get started immediately.
+The `example_workflows/ideogram4_t2i.json` file is a **ready-to-use ComfyUI workflow** — just drag and drop it into ComfyUI to get started immediately.
+
+It is based on the **official ComfyUI Ideogram 4 txt2img workflow**, with one addition: the **🦙 LlamaCPP → Ideogram Prompt** node wired in as the prompt source. Everything else — the model loader, VAE, CLIP, sampler, and save node — is identical to the stock workflow.
+
+To use it you will need:
+- The Ideogram 4 model weights (`ideogram4_fp8_scaled.safetensors`)
+- The unconditional model (`ideogram4_unconditional_fp8_scaled.safetensors`)
+- CLIP model (`qwen3vl_8b_fp8_scaled.safetensors`)
+- VAE (`flux2-vae.safetensors`)
+- Your llama.cpp server running on `http://127.0.0.1:8082`
+
+> Adjust the model filenames to match whatever you have named them locally.
 
 ## Example output
 
@@ -89,7 +99,6 @@ The comic strip below was generated with:
 - Prompt: *"An 8-panel comic strip showing Homer Simpson discovering a mysterious glowing donut in his backyard at night, picking it up, taking a bite, slowly transforming into a superhero with a donut-shaped chest emblem, flying over Springfield, saving Bart from falling off a skateboard ramp, landing heroically, then immediately sitting back on the couch eating another donut, hand-drawn comic book style with bold ink outlines, vibrant flat colors, and classic speech bubbles"*
 
 <img width="1152" height="640" alt="Ideogram_4 0_00014_" src="https://github.com/user-attachments/assets/c09d4360-4a89-48bc-b037-51e616d8c7dc" />
-
 
 ## Tips
 
