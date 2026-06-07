@@ -65,8 +65,6 @@ The node expects your llama.cpp server running in **router mode** on port `8082`
 "C:\Llama CPP\llama-server.exe" --port 8082 --router ...
 ```
 
-Presets are loaded from `presets.ini`. See the [llama.cpp server docs](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md) for full router mode configuration.
-
 ### Thinking budget
 
 The node sends `thinking_budget_tokens` per request — no server-side `--reasoning-budget` flag needed. You'll see this in your llama.cpp logs when it's working:
@@ -99,6 +97,13 @@ The comic strip below was generated with:
 - **For simple product shots**: `thinking_budget` of `1024`–`2048` is plenty and saves time
 - **Temperature**: `0.6` is a good default. Go lower (`0.3`) for more consistent JSON structure, higher (`0.8`) for more creative descriptions
 - **`unload_after = true`** is strongly recommended — the LLM and diffusion model fighting over VRAM will cause OOM errors on most consumer GPUs
+
+## WOrkflow example
+
+Alongside the example workflow .json file you can find, here is how the custom node integrates with the official workflow for ideogram4:
+
+<img width="2223" height="1048" alt="image" src="https://github.com/user-attachments/assets/eb3cb1a2-9228-4981-b3dc-c0f5a9bbc166" />
+
 
 ## License
 
