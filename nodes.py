@@ -21,7 +21,7 @@ import time
 # Shared helpers
 # ──────────────────────────────────────────────────────────────────────────────
 
-_DEFAULT_URL = "http://127.0.0.1:8082"
+_DEFAULT_URL = "http://192.168.0.143:8082"
 
 
 def _post_json(url: str, payload: dict, timeout: int = 300) -> dict:
